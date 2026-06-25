@@ -1,0 +1,244 @@
+/* NeuroSense AI – Main Stylesheet */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap');
+
+/* ── Root Variables ─────────────────────────────────────────────────────── */
+:root {
+    --primary: #2563EB;
+    --primary-light: #3B82F6;
+    --primary-dark: #1D4ED8;
+    --secondary: #14B8A6;
+    --accent: #DC2626;
+    --bg: #F8FAFC;
+    --surface: #FFFFFF;
+    --surface-2: #F1F5F9;
+    --border: #E2E8F0;
+    --text: #0F172A;
+    --text-muted: #64748B;
+    --success: #16A34A;
+    --warning: #D97706;
+    --radius: 12px;
+    --radius-lg: 18px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.07), 0 4px 16px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 20px rgba(37,99,235,0.10);
+}
+
+/* ── Global Reset ───────────────────────────────────────────────────────── */
+html, body, [data-testid="stAppViewContainer"] {
+    background-color: var(--bg) !important;
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+}
+
+[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%) !important;
+    border-right: 1px solid rgba(255,255,255,0.06);
+}
+
+[data-testid="stSidebar"] * { color: #CBD5E1 !important; }
+
+/* ── Sidebar Logo ───────────────────────────────────────────────────────── */
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0 8px;
+}
+.logo-icon { font-size: 2rem; }
+.logo-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #F1F5F9 !important;
+    letter-spacing: -0.3px;
+}
+.logo-subtitle {
+    font-size: 0.72rem;
+    color: #94A3B8 !important;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+.sidebar-divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin: 10px 0;
+}
+.sidebar-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: #94A3B8 !important;
+    padding: 6px 0;
+}
+.status-dot {
+    width: 8px; height: 8px;
+    background: #22C55E;
+    border-radius: 50%;
+    box-shadow: 0 0 6px #22C55E;
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* ── Cards ──────────────────────────────────────────────────────────────── */
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 20px 24px;
+    box-shadow: var(--shadow);
+    margin-bottom: 16px;
+}
+.card-glass {
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.55);
+    border-radius: var(--radius-lg);
+    padding: 20px 24px;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 16px;
+}
+.metric-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 20px 20px 16px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+.metric-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+.metric-icon { font-size: 1.8rem; margin-bottom: 6px; }
+.metric-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1;
+}
+.metric-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+/* ── Page Header ────────────────────────────────────────────────────────── */
+.page-header {
+    margin-bottom: 28px;
+}
+.page-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.5px;
+    margin: 0;
+}
+.page-subtitle {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    margin-top: 4px;
+}
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px;
+    border-radius: 99px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+.badge-primary { background: #EFF6FF; color: var(--primary); }
+.badge-success { background: #F0FDF4; color: var(--success); }
+.badge-danger  { background: #FEF2F2; color: var(--accent); }
+.badge-warn    { background: #FFFBEB; color: var(--warning); }
+
+/* ── Prediction Result Boxes ────────────────────────────────────────────── */
+.result-box {
+    border-radius: var(--radius-lg);
+    padding: 22px 26px;
+    margin: 12px 0;
+    border-left: 5px solid;
+}
+.result-alzheimers {
+    background: #FEF2F2;
+    border-color: var(--accent);
+}
+.result-healthy {
+    background: #F0FDF4;
+    border-color: var(--success);
+}
+.result-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+.result-prob {
+    font-size: 2.4rem;
+    font-weight: 700;
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -1px;
+}
+
+/* ── Progress / Gauge ───────────────────────────────────────────────────── */
+.prob-bar-wrap {
+    background: var(--surface-2);
+    border-radius: 99px;
+    height: 10px;
+    overflow: hidden;
+    margin: 8px 0 4px;
+}
+.prob-bar-fill {
+    height: 100%;
+    border-radius: 99px;
+    background: linear-gradient(90deg, var(--secondary), var(--primary));
+    transition: width 0.4s ease;
+}
+
+/* ── Fusion Formula ─────────────────────────────────────────────────────── */
+.formula-box {
+    background: #EFF6FF;
+    border: 1.5px solid #BFDBFE;
+    border-radius: var(--radius);
+    padding: 16px 22px;
+    font-family: 'Space Grotesk', monospace;
+    font-size: 1.02rem;
+    color: var(--primary-dark);
+    letter-spacing: 0.2px;
+}
+
+/* ── Table overrides ────────────────────────────────────────────────────── */
+.stDataFrame { border-radius: var(--radius) !important; overflow: hidden; }
+
+/* ── Button overrides ───────────────────────────────────────────────────── */
+.stButton > button {
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.2px !important;
+    transition: all 0.18s !important;
+}
+.stButton > button[kind="primary"] {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+    border: none !important;
+    color: white !important;
+}
+
+/* ── Radio (sidebar nav) ────────────────────────────────────────────────── */
+[data-testid="stSidebar"] .stRadio label {
+    font-size: 0.9rem !important;
+    padding: 6px 0 !important;
+}
+
+/* ── Divider ────────────────────────────────────────────────────────────── */
+hr { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
