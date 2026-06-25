@@ -1,24 +1,8 @@
-"""
-Multimodal Fusion Logic for NeuroSense AI.
-DO NOT MODIFY THE FUSION FORMULA.
-"""
 from typing import Dict
 
 
 def fuse_predictions(speech_prob: float, handwriting_prob: float) -> Dict:
-    """
-    Fuse speech and handwriting probabilities using weighted average.
-
-    Fusion formula (DO NOT CHANGE):
-        final_prob = 0.6 * speech_prob + 0.4 * handwriting_prob
-
-    Args:
-        speech_prob: Probability from speech model (0-1).
-        handwriting_prob: Probability from handwriting model (0-1).
-
-    Returns:
-        Dictionary with final probability, prediction, and risk level.
-    """
+  
     final_prob = 0.6 * speech_prob + 0.4 * handwriting_prob
 
     if final_prob >= 0.5:
