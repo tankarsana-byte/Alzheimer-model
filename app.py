@@ -1,7 +1,4 @@
-"""
-NeuroSense AI — Main Streamlit Application Entry Point
-Multimodal Explainable Alzheimer's Screening System
-"""
+
 import streamlit as st
 from frontend.styles.theme import CUSTOM_CSS
 
