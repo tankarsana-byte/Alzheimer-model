@@ -1,4 +1,3 @@
-"""Plotly chart helpers for NeuroSense AI."""
 import numpy as np
 import plotly.graph_objects as go
 import plotly.express as px
@@ -30,7 +29,7 @@ def bar_chart(values: np.ndarray, title: str, x_label: str = "Feature Index") ->
 
 
 def gauge_chart(value: float, title: str = "Risk Score") -> go.Figure:
-    """Gauge meter for probability display."""
+
     color = ACCENT if value >= 0.5 else SECONDARY
     fig = go.Figure(
         go.Indicator(
@@ -65,7 +64,7 @@ def gauge_chart(value: float, title: str = "Risk Score") -> go.Figure:
 
 
 def fusion_comparison_chart(speech_prob: float, handwriting_prob: float, final_prob: float) -> go.Figure:
-    """Horizontal bar comparison of all three probabilities."""
+    
     labels = ["Speech Model", "Handwriting Model", "Fusion Result"]
     values = [speech_prob * 100, handwriting_prob * 100, final_prob * 100]
     colors = [PRIMARY, SECONDARY, ACCENT if final_prob >= 0.5 else "#22C55E"]
