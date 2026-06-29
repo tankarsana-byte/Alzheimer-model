@@ -19,7 +19,7 @@ with st.sidebar:
         """
         <div style="text-align:center;padding:1rem 0 0.5rem;">
             <div style="font-size:2.5rem;">🧠</div>
-            <div style="font-size:1.2rem;font-weight:700;color:#E2E8F0;">NeuroSense AI</div>
+            <div style="font-size:1.2rem;font-weight:700;color:#E2E8F0;">Medha Shakti AI</div>
             <div style="font-size:0.75rem;color:#94A3B8;margin-top:0.2rem;">Alzheimer's Screening</div>
         </div>
         """,
