@@ -3,10 +3,10 @@ import streamlit as st
 
 
 def render() -> None:
-    st.title("ℹ️ About NeuroSense AI")
+    st.title("ℹ️ About Medha Shakti AI")
     st.divider()
     st.markdown("""
-    ## 🧠 NeuroSense AI
+    ## 🧠 Medha Shakti AI
     ### Multimodal Explainable Alzheimer's Screening System
 
     NeuroSense AI is an IEEE research project that combines **speech** and **handwriting** analysis 
